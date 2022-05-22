@@ -1,6 +1,7 @@
 const postData = [
     {
-        username:'sachin234',
+        username:'sachin',
+       
         userImg:'https://randomuser.me/api/portraits/men/31.jpg',
         postContent:'Lorem Ipsum',
         postImg:null,
@@ -21,7 +22,7 @@ const postData = [
         ]
     },
     {
-        username:'balrajn234',
+        username:'balraj',
         userImg:'https://randomuser.me/api/portraits/men/71.jpg',
         postContent:'Lorem Ipsum',
         postImg:null,
@@ -42,7 +43,7 @@ const postData = [
         ]
     },
     {
-        username:'balrajn2sdfs34',
+        username:'balrajNew',
         userImg:'https://randomuser.me/api/portraits/men/41.jpg',
         postContent:'Lorem dfgdfum',
         postImg:null,

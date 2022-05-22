@@ -3,7 +3,7 @@ const Nav =({user})=>{
  
     return(
         <div>
-            <nav class="navbar navbar-dark bg-dark">
+            <nav class="navbar navbar-dark bg-dark fixed-top">
                 <Link class="navbar-brand"to="/">
                     <img src="/img/logo.png" height="50"  class="d-inline-block align-top mx-3" alt=""/>
                     

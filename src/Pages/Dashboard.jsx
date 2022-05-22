@@ -4,11 +4,13 @@ import Nav from '../Components/Nav';
 import postData  from "../data/postsData";
 import PostCard from '../Components/posttCard'
 const Dashboard =({user})=>{
-    
+   
 
     return(
         <div>
             <Nav user={user}/>
+            <br/>
+            <br/>
             {
                 user?(
                     <div>
