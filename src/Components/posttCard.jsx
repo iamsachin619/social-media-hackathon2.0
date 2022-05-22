@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Comments from './Comments'
 import './PostCard.css'
-const PostCard = ({post}) => {
+const PostCard = ({post,user}) => {
     const [commentsHandler, setCommentHandler] = useState(false);
     const setCommentHandlerEvent = () => {
         setCommentHandler(!commentsHandler);

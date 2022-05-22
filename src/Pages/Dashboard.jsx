@@ -1,9 +1,10 @@
 import {  Navigate } from "react-router-dom";
 import MakePost from "../Components/MakePost";
 import Nav from '../Components/Nav';
-import postData  from "../data/postsData";
-import PostCard from '../Components/posttCard'
-const Dashboard =({user})=>{
+
+import PostCard from '../Components/posttCard';
+
+const Dashboard =({user, addPost,postDataNew})=>{
    
 
     return(
@@ -14,10 +15,10 @@ const Dashboard =({user})=>{
             {
                 user?(
                     <div>
-                    <MakePost/>
+                    <MakePost user={user} addPost={addPost}/>
                     {
-                        postData.map((post)=>{
-                            return <PostCard post={post}/>
+                        postDataNew.map((post)=>{
+                            return <PostCard post={post} user={user}/>
                         })
                     }
                     </div>
@@ -25,7 +26,7 @@ const Dashboard =({user})=>{
                 : <Navigate  to='/login' />
             }
            
-{console.log(postData)}
+
             {/* {
                 postData.map((post)=>{
                     return <PostCard post={post}/>

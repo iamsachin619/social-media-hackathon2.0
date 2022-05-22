@@ -8,6 +8,7 @@ const Login = ({setUser}) => {
     const [pwd, setPwd] = useState('')
     const navigate = useNavigate()
     const [err, setErr] = useState(false) 
+
     return(
             <div className='card'>
             <h3 className="App">Sign in to Post</h3>
@@ -38,6 +39,7 @@ const Login = ({setUser}) => {
                     for(let u of userLoginData){
                         if(u.username == username && u.pwd ==pwd){
                             setUser({username,pwd})
+                            
                              navigate('/')
                         }
                     }
