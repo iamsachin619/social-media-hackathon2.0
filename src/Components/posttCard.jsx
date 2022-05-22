@@ -6,6 +6,16 @@ const PostCard = ({post}) => {
     const setCommentHandlerEvent = () => {
         setCommentHandler(!commentsHandler);
     }
+    const [comments, setComments] = useState(post.comments);
+    const [newComment, setNewComment] = useState();
+    const addCommentHandler = (e) =>{
+        e.preventDefault();
+        console.log("add called "+newComment)
+        console.log(comments)
+        setComments(prevComments=>{
+            return [{username:'Sachin', comment: newComment}, ...prevComments]
+        })
+    }
     return(
         <div className='card post-item'>
             <div className='m-2'>
@@ -21,10 +31,10 @@ const PostCard = ({post}) => {
                     <span className='m-2'><button className='btn btn-outline-primary btn-sm' onClick={setCommentHandlerEvent}>{commentsHandler ? 'Hide Comment' : 'Comments'}</button></span>
                 </div>
                 <div className={commentsHandler ? 'show-comments' : 'hide-comments'}>
-                    <Comments comments={post.comments}/>
+                    <Comments comments={comments}/>
                     <div className='m-2'>
-                        <textarea className='form-control' placeholder='Write your comments here...'></textarea>
-                        <button className='btn btn-outline-primary btn-sm mt-1'>Add</button>
+                        <textarea className='form-control' placeholder='Write your comments here...' onChange={(e)=>{setNewComment(e.target.value)}}></textarea>
+                        <button className='btn btn-outline-primary btn-sm mt-1' onClick={addCommentHandler}>Add</button>
                     </div>
                 </div>
             </div>
