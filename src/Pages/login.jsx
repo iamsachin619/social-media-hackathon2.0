@@ -11,7 +11,7 @@ const Login = ({setUser}) => {
     const [err, setErr] = useState(false) 
 
     return(
-        <div className='card loginCard center'>
+        <div className='card center'>
             <h3 className="App">Sign in to Post</h3>
             <form>
                 <div class="input-group mb-3">
