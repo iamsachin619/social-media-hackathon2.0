@@ -6,16 +6,10 @@ const PostCard = ({post,user}) => {
     const setCommentHandlerEvent = () => {
         setCommentHandler(!commentsHandler);
     }
-    console.log("postcard")
-    console.log(post)
     const [comments, setComments] = useState(post.comments);
     const [newComment, setNewComment] = useState();
-    console.log("---------")
-    console.log(comments);
     const addCommentHandler = (e) =>{
         e.preventDefault();
-        console.log("add called "+newComment)
-        console.log(comments)
         setComments(prevComments=>{
             return [{username:'Sachin', comment: newComment}, ...prevComments]
         })
@@ -28,6 +22,7 @@ const PostCard = ({post,user}) => {
                 <strong className='mx-3'>{post.username}</strong>
             </div>
             <div className='card text-black mt-3'>
+                <img class="card-img-top" alt="card" src={post.postImg} />
                 <p className='m-2'>
                     {post.postContent}
                 </p>
