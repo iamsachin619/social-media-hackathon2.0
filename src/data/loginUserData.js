@@ -5,15 +5,15 @@ const userLoginData = [
     },
     {
         username: 'balraj',
-        pwd: 'asfhsd'
+        pwd: 'Balraj'
     },
     {
         username: 'nasima',
-        pwd: 'asfhsd'
+        pwd: 'nasima'
     },
     {
-        username: ' sachin',
-        pwd: 'asfhsd'
+        username: 'pushpanjali',
+        pwd: 'pushpanjali'
     },
     {
         username: ' sachin',
