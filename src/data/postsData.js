@@ -43,7 +43,7 @@ const postData = [
     },
     {
         username:'balrajn2sdfs34',
-        userImg:'https://randomuser.me/api/portraits/men/71.jpg',
+        userImg:'https://randomuser.me/api/portraits/men/41.jpg',
         postContent:'Lorem dfgdfum',
         postImg:null,
         noOfLikes:435,
@@ -63,3 +63,5 @@ const postData = [
         ]
     },
 ]
+
+export default postData;
