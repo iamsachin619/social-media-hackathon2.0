@@ -8,12 +8,7 @@ const PostCard = ({post,user}) => {
     }
     const [comments, setComments] = useState(post.comments);
     const [newComment, setNewComment] = useState();
-<<<<<<< HEAD
-    
-    // console.log(comments);
 
-=======
->>>>>>> 048b9daac7315bd2d567de9f2c24a96035150012
     const addCommentHandler = (e) =>{
         e.preventDefault();
         setComments(prevComments=>{
