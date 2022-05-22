@@ -18,17 +18,15 @@ function App() {
       username: user.username,
       noOfLikes: Math.floor(Math.random() * 100),
       postContent: content,
-      comments: null,
       postImg: null,
       userImg: `https://randomuser.me/api/portraits/men/${Math.floor(
         Math.random() * 100
       )}.jpg`,
     };
-    console.log("iran");
     setPostDataNew((prevPostData) => {
-      console.log(prevPostData);
       return [post, ...prevPostData];
     });
+    console.log(postDataNew);
   };
 
   return (

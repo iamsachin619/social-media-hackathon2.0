@@ -32,24 +32,23 @@ const Login = ({setUser}) => {
                     }}
                     />
                 </div>
-                <button type="submit" className="btn btn-primary pull-center" onClick={(e)=>{
-                    
-                    e.preventDefault()
-                    console.log(userLoginData)
-                    for(let u of userLoginData){
-                        if(u.username == username && u.pwd ==pwd){
-                            setUser({username,pwd})
-                            
-                             
-                            navigate('/dashboard')
-                        }
-                    }
-                    
-                }}>Login</button>
+                <div className='App'>
+                    <button type="submit" className="btn btn-primary" onClick={(e)=>{                    
+                        e.preventDefault()
+                        console.log(userLoginData)
+                        for(let u of userLoginData){
+                            if(u.username == username && u.pwd == pwd){
+                                setUser({username,pwd})
+                                navigate('/dashboard')
+                            }else{
+                                setErr(true)
+                            }
+                        }                    
+                    }}>Login</button>
+                </div>
             </form>
-
             {
-                err?(<div>Invalid User</div>):(<div></div>)
+                err?<div class="alert alert-danger" role="alert">Invalid User</div>:''
             }
             <span className='App'>Don't have an account?<Link to='/signup'>SignUp</Link></span>
         </div>
