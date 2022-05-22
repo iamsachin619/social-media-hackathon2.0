@@ -1,38 +1,30 @@
-import {  Navigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import MakePost from "../Components/MakePost";
-import Nav from '../Components/Nav';
+import Nav from "../Components/Nav";
 
-import PostCard from '../Components/posttCard';
+import PostCard from "../Components/posttCard";
 
-const Dashboard =({user, addPost,postDataNew})=>{
-   
-
-    return(
+const Dashboard = (props) => {
+    const addPostDataHandler = (content) =>{
+        props.addPost(content);
+    }
+    return (
         <div>
-            <Nav user={user}/>
-            <br/>
-            <br/>
-            {
-                user?(
-                    <div>
-                    <MakePost user={user} addPost={addPost}/>
-                    {
-                        postDataNew.map((post)=>{
-                            return <PostCard post={post} user={user}/>
-                        })
-                    }
-                    </div>
-                )
-                : <Navigate  to='/login' />
-            }
-           
-
-            {/* {
-                postData.map((post)=>{
-                    return <PostCard post={post}/>
-                })
-            } */}
+        <Nav user={props.user} />
+        <br />
+        <br />
+        {props.user ? (
+            <div>
+            <MakePost user={props.user} addPostData={addPostDataHandler} />
+            {props.postData.map((post) => {
+                return <PostCard post={post} user={props.user} />;
+            })}
+            </div>
+        ) : (
+            <Navigate to="/login" />
+        )}
+        
         </div>
-    )
-}
-export default Dashboard
+    );
+};
+export default Dashboard;

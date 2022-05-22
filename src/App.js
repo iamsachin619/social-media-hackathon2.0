@@ -24,26 +24,24 @@ function App() {
         Math.random() * 100
       )}.jpg`,
     };
-    console.log('iran')
-    setPostDataNew((prevPostData)=>{
-      console.log(prevPostData)
-      return [post,...prevPostData]
+    console.log("iran");
+    setPostDataNew((prevPostData) => {
+      console.log(prevPostData);
+      return [post, ...prevPostData];
     });
   };
 
   return (
     <div>
       <Routes>
+        <Route path="/" element={<Login setUser={setUser} />} />
+        <Route path="/login" element={<Login setUser={setUser} />} />
         <Route
-          path="/"
+          path="/dashboard"
           element={
-            <Login setUser={setUser} />
+            <Dashboard user={user} postData={postDataNew} addPost={addPost} />
           }
         />
-        <Route path="/login" element={<Login setUser={setUser} />} />
-        <Route path='/dashboard' element={<Dashboard user={user}
-              postData={postDataNew}
-              addPost={addPost}/>}/>
         <Route path="/signup" element={<SignUp />} />
         <Route path="/profile" element={<Profile user={user} />} />
       </Routes>
