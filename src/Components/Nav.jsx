@@ -1,8 +1,9 @@
-import {Link,useLocation} from 'react-router-dom'
+import {Link,useLocation, useNavigate} from 'react-router-dom'
 
 const Nav =({user,setUser})=>{
 
     const location = useLocation();
+    const navigate = useNavigate();
     console.log(location.pathname);
     return(
         <div>
@@ -38,9 +39,9 @@ const Nav =({user,setUser})=>{
                             <span title='Sign out'className='mx-3' onClick={(e)=>{
                                 e.preventDefault()
                                 sessionStorage.setItem('username',null)
+                                navigate('/login');
                                 setUser(null)
                                 console.log('iran')
-                                
                             }}>
                                 
                                 
