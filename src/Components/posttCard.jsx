@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Comments from './Comments'
 import './PostCard.css'
 const PostCard = ({post,user}) => {
@@ -10,17 +10,20 @@ const PostCard = ({post,user}) => {
     console.log(post)
     const [comments, setComments] = useState(post.comments);
     const [newComment, setNewComment] = useState();
-    console.log("---------")
-    console.log(comments);
+    
+    // console.log(comments);
+
     const addCommentHandler = (e) =>{
         e.preventDefault();
         console.log("add called "+newComment)
         console.log(comments)
         setComments(prevComments=>{
-            return [{username:'Sachin', comment: newComment}, ...prevComments]
+            return [{username: user.username, comment: newComment}, ...prevComments]
         })
         setNewComment('');
     }
+
+    // useEffect(() => { setComments(post.comments) }, [post.comments]);
     return(
         <div className='card post-item'>
             <div className='m-2'>
@@ -36,7 +39,7 @@ const PostCard = ({post,user}) => {
                     <span className='m-2'><button className='btn btn-outline-primary btn-sm' onClick={setCommentHandlerEvent}>{commentsHandler ? 'Hide Comment' : 'Comments'}</button></span>
                 </div>
                 <div className={commentsHandler ? 'show-comments' : 'hide-comments'}>
-                    <Comments comments={comments}/>
+                    <Comments comments={comments} />
                     <div className='m-2'>
                         <textarea className='form-control' placeholder='Write your comments here...' value={newComment} onChange={(e)=>{setNewComment(e.target.value)}}></textarea>
                         <button className='btn btn-outline-primary btn-sm mt-1' onClick={addCommentHandler}>Add</button>

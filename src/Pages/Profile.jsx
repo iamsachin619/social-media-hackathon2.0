@@ -1,23 +1,26 @@
 import userData from '../data/usersData'
 import { Navigate, useNavigate } from 'react-router-dom';
-
-const Profile =({})=>{
+import Nav from '../Components/Nav'
+const Profile =({user})=>{
     const fakeData = userData[0];
     console.log(fakeData)
+
+    
     return(
         <div>
            {/* profile page */}
            {
                
                     <div className="container">
-                <div className="row">
+                        <Nav user={user}/>
+                <div className="row mt-4">
                     <div className="col">
                         <div className="card">
                             <div className="card-body">
                                 <div className=''>
-                                <img src={fakeData.picture.large} alt="" className='rounded-circle mx-auto'/>
-                                {/* <h3>{user.username}</h3> */}
-                                {/* <p>Name: {user.username}</p> */}
+                                <img src={fakeData.picture.large} alt="" className='rounded-circle mx-auto my-3'/>
+                                <h2>{user.username}</h2>
+                              <p>Username: {user.username}</p>
                                 <h3 className='mx-auto'>{fakeData.name.title}.{fakeData.name.first} {fakeData.name.last}</h3>
 
                                 </div>

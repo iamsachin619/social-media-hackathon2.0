@@ -8,10 +8,19 @@ import SignUp from "./Pages/Signup";
 import Profile from "./Pages/Profile";
 
 import postData from "./data/postsData";
-
+import userLoginData from "./data/loginUserData";
 function App() {
-  const [user, setUser] = useState(null);
+  let data = sessionStorage.getItem("username");
+  console.log(data)
+  const [user, setUser] = useState(JSON.parse(data));
   const [postDataNew, setPostDataNew] = useState(postData);
+  const [userList,setUserList] = useState(userLoginData);
+
+  const addUser = (user)=>{
+    setUserList((prevData)=>{
+      return [...prevData,user]
+    })
+  }
 
   const addPost = (content) => {
     let post = {
@@ -32,12 +41,12 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Login setUser={setUser} />} />
+        <Route path="/" element={<Dashboard user={user} postData={postDataNew} addPost={addPost} />} />
         <Route path="/login" element={<Login setUser={setUser} />} />
         <Route
           path="/dashboard"
           element={
-            <Dashboard user={user} postData={postDataNew} addPost={addPost} />
+            <Dashboard user={user} postData={postDataNew} addPost={addPost}  setUser={setUser} />
           }
         />
         <Route path="/signup" element={<SignUp />} />

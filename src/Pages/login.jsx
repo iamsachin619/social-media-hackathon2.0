@@ -11,7 +11,7 @@ const Login = ({setUser}) => {
     const [err, setErr] = useState(false) 
 
     return(
-        <div className='card center'>
+        <div className='card loginCard center'>
             <h3 className="App">Sign in to Post</h3>
             <form>
                 <div class="input-group mb-3">
@@ -40,6 +40,7 @@ const Login = ({setUser}) => {
                         for(let u of userLoginData){
                             if(u.username == username && u.pwd == pwd){
                                 setUser({username,pwd})
+                                sessionStorage.setItem("username", JSON.stringify({username,pwd}))
                                 navigate('/dashboard')
                             }else{
                                 setErr(true)

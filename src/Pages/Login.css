@@ -5,8 +5,14 @@
     margin: 2rem auto;
     width: 50rem;
     max-width: 95%;
+    
+     
 }
-
+.loginCard{
+      
+    background-color: rgba(0,0,0,0.5) !important;
+        
+}
 .vertical-center {
     margin: 0;
     position: absolute;
