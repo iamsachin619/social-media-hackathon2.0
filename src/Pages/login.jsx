@@ -3,6 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 
 import './Login.css';
 import userLoginData from '../data/loginUserData';
+
 const Login = ({setUser}) => {
     const [username, setUsername] = useState('')
     const [pwd, setPwd] = useState('')
@@ -10,7 +11,7 @@ const Login = ({setUser}) => {
     const [err, setErr] = useState(false) 
 
     return(
-            <div className='card my-auto'>
+        <div className='card center'>
             <h3 className="App">Sign in to Post</h3>
             <form>
                 <div class="input-group mb-3">
@@ -50,7 +51,7 @@ const Login = ({setUser}) => {
             {
                 err?<div class="alert alert-danger" role="alert">Invalid User</div>:''
             }
-            <span className='App'>Don't have an account?<Link to='/signup'>SignUp</Link></span>
+            <span className='App'>Don't have an account?<Link to='/signup'>Sign Up</Link></span>
         </div>
     )
 }
