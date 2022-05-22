@@ -1,8 +1,9 @@
 const Comments = ({comments}) => {
     return (
         <div>
-            {comments.map((comment)=>{
-                return (<div className="card post-item">
+            {comments.map((comment, index)=>{
+                return (
+                <div className="card post-item" key={index}>
                     <div className="card-header">{comment.username}</div>
                 <p>{comment.comment}</p>
             </div>)

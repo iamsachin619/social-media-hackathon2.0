@@ -6,8 +6,12 @@ const PostCard = ({post,user}) => {
     const setCommentHandlerEvent = () => {
         setCommentHandler(!commentsHandler);
     }
+    console.log("postcard")
+    console.log(post)
     const [comments, setComments] = useState(post.comments);
     const [newComment, setNewComment] = useState();
+    console.log("---------")
+    console.log(comments);
     const addCommentHandler = (e) =>{
         e.preventDefault();
         console.log("add called "+newComment)
@@ -34,7 +38,7 @@ const PostCard = ({post,user}) => {
                 <div className={commentsHandler ? 'show-comments' : 'hide-comments'}>
                     <Comments comments={comments}/>
                     <div className='m-2'>
-                        <textarea className='form-control' placeholder='Write your comments here...' onChange={(e)=>{setNewComment(e.target.value)}}></textarea>
+                        <textarea className='form-control' placeholder='Write your comments here...' value={newComment} onChange={(e)=>{setNewComment(e.target.value)}}></textarea>
                         <button className='btn btn-outline-primary btn-sm mt-1' onClick={addCommentHandler}>Add</button>
                     </div>
                 </div>
