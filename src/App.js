@@ -18,7 +18,7 @@ function App() {
       username: user.username,
       noOfLikes: Math.floor(Math.random() * 100),
       postContent: content,
-      comments: null,
+      comments: [],
       postImg: null,
       userImg: `https://randomuser.me/api/portraits/men/${Math.floor(
         Math.random() * 100

@@ -15,6 +15,7 @@ const PostCard = ({post,user}) => {
         setComments(prevComments=>{
             return [{username:'Sachin', comment: newComment}, ...prevComments]
         })
+        setNewComment('');
     }
     return(
         <div className='card post-item'>
