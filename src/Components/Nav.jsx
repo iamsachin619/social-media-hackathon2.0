@@ -11,7 +11,7 @@ const Nav =({user})=>{
                 {
                     user?
                     (<h4 className="text-light mx-3">
-                        Welcome, User!
+                        Welcome, {user.username}!
                     </h4>):   
                      (<h4 className="text-light mx-3">
                         Welcome, Guest!

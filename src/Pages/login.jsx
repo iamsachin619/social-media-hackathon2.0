@@ -10,7 +10,7 @@ const Login = ({setUser}) => {
     const [err, setErr] = useState(false) 
 
     return(
-            <div className='card'>
+            <div className='card my-auto'>
             <h3 className="App">Sign in to Post</h3>
             <form>
                 <div class="input-group mb-3">
