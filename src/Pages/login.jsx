@@ -40,7 +40,8 @@ const Login = ({setUser}) => {
                         if(u.username == username && u.pwd ==pwd){
                             setUser({username,pwd})
                             
-                             navigate('/')
+                             
+                            navigate('/dashboard')
                         }
                     }
                     

@@ -37,15 +37,13 @@ function App() {
         <Route
           path="/"
           element={
-            <Dashboard
-              user={user}
-              postData={postDataNew}
-              addPost={addPost}
-            />
+            <Login setUser={setUser} />
           }
         />
         <Route path="/login" element={<Login setUser={setUser} />} />
-        {/* <Route path='/dashboard' element={<Dashboard user={user}/>}/> */}
+        <Route path='/dashboard' element={<Dashboard user={user}
+              postData={postDataNew}
+              addPost={addPost}/>}/>
         <Route path="/signup" element={<SignUp />} />
         <Route path="/profile" element={<Profile user={user} />} />
       </Routes>
