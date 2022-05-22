@@ -1,7 +1,12 @@
-const Comments = props => {
+const Comments = ({comments}) => {
     return (
-        <div className="card post-item">
-            <p>this is where we show comments which we will fetch from props</p>
+        <div>
+            {comments.map((comment)=>{
+                return (<div className="card post-item">
+                    <div className="card-header">{comment.username}</div>
+                <p>{comment.comment}</p>
+            </div>)
+            })}
         </div>
     )
 }

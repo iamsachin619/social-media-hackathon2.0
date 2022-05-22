@@ -10,7 +10,7 @@ import SignUp from './Pages/Signup';
 import Profile from './Pages/Profile';
 function App() {
 
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState('ss')
 
   return (
     <div className="App">
