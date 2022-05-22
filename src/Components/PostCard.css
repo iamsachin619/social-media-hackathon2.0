@@ -11,5 +11,11 @@
     color: white;
 }
 .text-black {
-    
+    color: black;
+}
+.hide-comments{
+    display: none;
+}
+.show-comments {
+    display: block;
 }
