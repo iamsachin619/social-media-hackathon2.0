@@ -18,13 +18,13 @@ const PostCard = props => {
                 </p>
                 <div className='m-2'>
                     <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-                    <span className='m-2'><button onClick={setCommentHandlerEvent}>{commentsHandler ? 'Hide Comment' : 'Comments'}</button></span>
+                    <span className='m-2'><button className='btn btn-outline-primary btn-sm' onClick={setCommentHandlerEvent}>{commentsHandler ? 'Hide Comment' : 'Comments'}</button></span>
                 </div>
                 <div className={commentsHandler ? 'show-comments' : 'hide-comments'}>
                     <Comments/>
                     <div className='m-2'>
                         <textarea className='form-control'></textarea>
-                        <button className='btn btn-outline-primary mt-1'>Add</button>
+                        <button className='btn btn-outline-primary btn-sm mt-1'>Add</button>
                     </div>
                 </div>
             </div>
